@@ -1,0 +1,7 @@
+coverage/
+tmp/
+Gemfile.lock
+sorbet/rbi/
+.rspec_status
+*.gem
+dummy/

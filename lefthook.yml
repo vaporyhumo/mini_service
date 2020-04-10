@@ -1,0 +1,45 @@
+---
+def:
+  files:
+    pushed files: &pushed git diff --name-only HEAD @{push}
+    staged files: &staged git diff --name-only --staged
+    pushed specs: &pspecs git diff --name-only HEAD @{push} | grep _spec.rb
+    staged specs: &sspecs git diff --name-only --staged | grep _spec.rb
+
+pre-commit:
+  piped: true
+  commands:
+    00 sorbet:
+      run: bundle exec srb t
+    01 rspec:
+      run: bundle exec rspec {files}
+      files: *sspecs
+    02 rubocop:
+      run: bundle exec rubocop -fs --force-exclusion {files}
+      files: *staged
+
+pre-push:
+  piped: true
+  commands:
+    00 sorbet:
+      run: bundle exec srb t
+    01 rspec:
+      run: bundle exec rspec {files}
+      files: *pspecs
+    02 sandi:
+      run: bundle exec sandi_meter -d .
+    03 rubocop:
+      run: bundle exec rubocop -fs --force-exclusion {files}
+      files: *pushed
+
+audit:
+  piped: true
+  commands:
+    00 sorbet:
+      run: bundle exec srb t
+    01 rspec:
+      run: bundle exec rspec
+    02 sandi:
+      run: bundle exec sandi_meter -d .
+    03 rubocop:
+      run: bundle exec rubocop -fs

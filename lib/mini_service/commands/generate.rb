@@ -28,8 +28,15 @@ module MiniService
 
       def ask_name
         unless name
-          @name = prompt.ask 'Name? '
+          @name = prompt.ask 'Name?', required: true,
+                             default: 'SomeModule::SomeService' do |q|
+            q.validate %r{\A[A-Z]}, ask_error_message
+          end
         end
+      end
+
+      def ask_error_message
+        'Invalid class name, please start with an uppercase letter'
       end
 
       def location

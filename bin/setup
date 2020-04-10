@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+def main
+  bundle_install
+end
+
+def bundle_install
+  system 'bundle update --all'
+end
+
+main

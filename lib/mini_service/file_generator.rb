@@ -51,7 +51,7 @@ module MiniService
 
       def argument(arg)
         if arg[':']
-          arg.gsub(':', ': ')
+          arg.gsub('=', ': ')
         else
           ":#{arg}"
         end

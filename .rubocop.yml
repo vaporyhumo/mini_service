@@ -1,0 +1,52 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+Metrics/MethodLength:
+  Max: 5
+  ExcludedMethods: []
+  Exclude:
+    - '**/*.rbi'
+
+Metrics/BlockLength:
+  ExcludedMethods:
+    - describe
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+# Allow explicit 5 lines if else methods
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Rails/Output:
+  Enabled: false
+
+Style/RegexpLiteral:
+  Description: Use / or %r around regular expressions.
+  Enabled: true
+  EnforcedStyle: percent_r
+  SupportedStyles:
+    - slashes
+    - percent_r
+    - mixed
+  AllowInnerSlashes: false
+
+RSpec/AnyInstance:
+  Enabled: false
