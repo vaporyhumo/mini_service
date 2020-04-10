@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors  = ['Rodrgo Andrés Contreras Vilina']
   spec.email    = ['roanvilina@gmail.com']
 
-  spec.summary  = 'Provides a simple service prototype class and its generator.'
+  spec.summary  = 'Provides a simple service prototype class.'
   spec.homepage = 'https://github.com/roanvilina/mini_service'
   spec.license  = 'MIT'
 

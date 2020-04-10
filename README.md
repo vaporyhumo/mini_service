@@ -1,6 +1,6 @@
 # MiniService
 MiniServices are a prototype from which to build single-functionality
- minimalistic services, aiming to
+minimalistic services, aiming to
 help you correctly modularize and isolate your processes making them easier to
 mantain and less prone to
 errors.
@@ -9,8 +9,8 @@ errors.
 Define them like this:
 ```ruby
 class ExampleService < MiniService::Base
-  mini_requires %i[a1 a2]
-  mini_allows %i[a3 a4]
+  mini_reqs %i[a1 a2]
+  mini_lets %i[a3 a4]
 
   private
 
@@ -24,9 +24,10 @@ Call them like this:
 ```ruby
 ExampleService.call(a1: 1, a2: 2) # or
 ExampleService.call(a1: 1, a2: 2, a3: 3, a4: 4)
-# Instance variables will be available for each key-value pair
-# so you can use @a1 inside perform if a1 is given in the args hash
+
 ```
+Instance variables will be available for each key-value pair
+so you can use `@a1` inside perform if `a1` is given in the `args` hash
 
 Adding `mini_reqs` will raise an error if you miss `reqd` arguments
 
@@ -39,7 +40,7 @@ You can create your own services by inheriting from `MiniService::Base` class.
 
 Your `MiniServices` should be used via their `call` method, providing arguments
 in a hash, like
-`ExampleService.call(p1: v1, p2: v2)` or `ExampleService.call(args)` with args
+`ExampleService.call(a1: 1, a2: 2)` or `ExampleService.call(args)` with args
 built elsewhere.
 
 This will automatically initialize your service with one `@instance_variable`
