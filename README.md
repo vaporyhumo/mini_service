@@ -37,16 +37,6 @@ created to perform an action and then destroyed.
 You would use a service to perform an action, but would never store the
 service's instance.
 
-### My opinion on services
-
-Services are generally not good OOP; but are definitively better than having
-classes with more than a hundred or even thousands of lines of code.
-
-Use Services to tidy up your code, learn better OOP and design patterns
-so you don't have to.
-
-Do not write services with more than 100 lines of code total, **please**.
-
 ## Usage
 
 Use `MiniService::Base` as the parent class for your services and make them
