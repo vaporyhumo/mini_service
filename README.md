@@ -145,22 +145,7 @@ end
 
 ### Overwritting `#initialize`
 
-This SHOULD work out, tho I have not tested it nor tried it.
-
-DO NOT add arguments to initialize!!
-
-```ruby
-  class Service < MiniService::Base
-    def initialize
-      super
-      # extra initialization here
-    end
-  end
-```
-
-You are supposed to set up the service's initial state
-through its arguments, and define any other thing using private methods,
-but anyhow, that's up to you.
+I haven't written this yet... oops!
 
 ## Contributing / License
 
