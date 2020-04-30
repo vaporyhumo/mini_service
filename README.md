@@ -1,7 +1,3 @@
-Check the old repo for versions 0.0.x 
-
-[OLD REPO](https://github.com/vaporyhumo/mini_service_archive/tree/v0.0.1)
-
 # MiniService [![Gem Version](https://badge.fury.io/rb/mini_service.svg)](https://badge.fury.io/rb/mini_service)
 MiniServices is a rails gem that provides a prototype from which to build
 single-functionality minimalistic services.
