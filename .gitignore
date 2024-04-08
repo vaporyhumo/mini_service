@@ -1,7 +1,5 @@
 coverage/
-tmp/
-Gemfile.lock
 sorbet/rbi/
+Gemfile.lock
 .rspec_status
 *.gem
-dummy/
