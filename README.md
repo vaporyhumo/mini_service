@@ -143,18 +143,3 @@ end
 => #<Service:0x0000000000000001>
 ```
 
-### Overwritting `#initialize`
-
-I haven't written this yet... oops!
-
-## Contributing / License
-
-Everyone is free to use this code for whatever they want.
-No one is allowed to apply any license over this code or anything
-created using this code as its base.
-Any variation of this gem should be free and open source.
-
-Use `bin/setup` to setup your development environment.
-
-You are free to open pull requests, I will check them out, but I'm not
-intending to do much more with this but fixing any potential bug.
