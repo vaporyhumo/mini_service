@@ -84,7 +84,7 @@ module MiniService
 
     private
 
-    def initialize(opts)
+    def initialize(opts = [])
       opts.each do |key, value|
         instance_variable_set "@#{key}", value
       end
