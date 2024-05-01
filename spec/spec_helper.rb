@@ -1,23 +1,17 @@
 # typed: false
 # frozen_string_literal: true
 
-if ENV['CRYSTALBALL'] == 'true'
-  require 'crystalball'
+require 'simplecov'
 
-  Crystalball::MapGenerator.start! do |config|
-    config.register Crystalball::MapGenerator::CoverageStrategy.new
-    config.register Crystalball::MapGenerator::DescribedClassStrategy.new
-  end
-else
-  require 'simplecov'
+SimpleCov.start do
+  enable_coverage :branch
 
-  SimpleCov.start do
-    SimpleCov.minimum_coverage 100
-    SimpleCov.minimum_coverage_by_file 100
-    SimpleCov.refuse_coverage_drop
-    add_group 'Files', %r{^/lib}
-    add_group 'Specs', %r{_spec\.rb$}
-  end
+  minimum_coverage line: 100, branch: 100
+  minimum_coverage_by_file 100
+  refuse_coverage_drop
+
+  add_group 'Files', %r{^/lib}
+  add_group 'Specs', %r{_spec\.rb$}
 end
 
 require 'mini_service'
